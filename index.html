@@ -618,16 +618,15 @@
             const key = $(this).data('i18n');
             const originalText = $(this).attr('data-original') || $(this).text();
             
-            // Orijinal metni sakla (sadece ilk seferde)
+          
             if (!$(this).attr('data-original')) {
                 $(this).attr('data-original', originalText);
             }
             
-            // Çeviriyi uygula veya orijinal metne dön
             $(this).text(lang === 'en' ? translations.en[key] || originalText : $(this).attr('data-original'));
         });
         
-        // Footer çevirisi
+        
         $('footer p').text(lang === 'en' ? translations.en.copyright : "© 2025 Rüya Çelik. Tüm hakları saklıdır.");
     }
 
@@ -637,7 +636,7 @@
         translatePage(lang);
     });
 
-    // Sayfa yüklendiğinde
+    
     const savedLang = localStorage.getItem('language');
     $('#languageSwitcher').val(savedLang || 'tr'); // Varsayılan Türkçe
     
